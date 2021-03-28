@@ -140,7 +140,7 @@ var resources = [
 				
 var secondaryResources = [
 			["beam", "scaffold", 50],
-            ["steel", "alloy", 75],
+            		["steel", "alloy", 75],
 			["steel", "gear", 15],
 			["slab", "concrate", 2500]
 			]
@@ -527,7 +527,7 @@ for (var i = 0; i < secondaryResources.length; i++) {
 	var secRes = gamePage.resPool.get(secondaryResources[i][1]);
 	var resMath = priRes.value / secondaryResources[i][2];	
 	
-	if (resMath > 1 && secRes.value < (priRes.value * (secResRatio / 100)) && gamePage.workshop.getCraft(secondaryResources[i][1]).unlocked) {
+	if (resMath > 1 && secRes.value < (resMath * (secResRatio / 100)) && gamePage.workshop.getCraft(secondaryResources[i][1]).unlocked) {
 		gamePage.craft(secondaryResources[i][1], (resMath * (secResRatio / 100)));
 	}
 }	
