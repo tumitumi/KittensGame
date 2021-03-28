@@ -493,7 +493,7 @@ function autoTrade() {
 					gamePage.diplomacy.tradeAll(game.diplomacy.get("leviathans"));
 				} else if (titRes.value < (titRes.maxValue * 0.9)  && gamePage.diplomacy.get('zebras').unlocked) {
 					if(ironResource.value > ironResource.maxValue * 0.99 ) {
-						gamePage.craftAll('iron');   
+						gamePage.craftAll('plate');   
 					}
 					gamePage.diplomacy.tradeAll(game.diplomacy.get("zebras"), (goldOneTwenty / 15));
 				} else if (gamePage.diplomacy.get('dragons').unlocked) {
