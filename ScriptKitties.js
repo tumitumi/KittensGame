@@ -487,10 +487,14 @@ function autoTrade() {
 		var unoRes = gamePage.resPool.get('unobtainium');
 		var goldResource = gamePage.resPool.get('gold');
 		var goldOneTwenty = gamePage.getResourcePerTick('gold') * 200;
+		var ironResource = gamePage.resPool.get('iron');
 			if (goldResource.value > (goldResource.maxValue - goldOneTwenty)) {
 				if (unoRes.value > 5000  && gamePage.diplomacy.get('leviathans').unlocked && gamePage.diplomacy.get('leviathans').duration != 0) {
 					gamePage.diplomacy.tradeAll(game.diplomacy.get("leviathans"));
 				} else if (titRes.value < (titRes.maxValue * 0.9)  && gamePage.diplomacy.get('zebras').unlocked) {
+					if(ironResource.value > ironResource.maxValue * 0.99 ) {
+						gamePage.craftAll('iron');   
+					}
 					gamePage.diplomacy.tradeAll(game.diplomacy.get("zebras"), (goldOneTwenty / 15));
 				} else if (gamePage.diplomacy.get('dragons').unlocked) {
 					gamePage.diplomacy.tradeAll(game.diplomacy.get("dragons"), (goldOneTwenty / 15));
