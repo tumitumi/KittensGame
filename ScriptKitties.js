@@ -496,8 +496,9 @@ function autoTrade() {
 						gamePage.craftAll('plate');   
 					}
 					gamePage.diplomacy.tradeAll(game.diplomacy.get("zebras"), (goldOneTwenty / 15));
-				} else if (gamePage.diplomacy.get('dragons').unlocked) {
-					gamePage.diplomacy.tradeAll(game.diplomacy.get("dragons"), (goldOneTwenty / 15));
+// temporarily remove the trade with dragons
+//				} else if (gamePage.diplomacy.get('dragons').unlocked) {
+//					gamePage.diplomacy.tradeAll(game.diplomacy.get("dragons"), (goldOneTwenty / 15));
 				}
 			}
 	}
